@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moving Pics</title>
+    <style>
+      #MovingContainer {
+        width: 80vw;
+        height: 80vh;
+        border: 1px solid #000;
+        position: relative;
+      }
+      #lImg {
+        position: absolute;
+        left: 0px;
+        top: 45%;
+      }
+      #rImg {
+        position: absolute;
+        right: 0px;
+        top: 45%;
+      }
+      #bImg {
+        position: absolute;
+        bottom: 0px;
+        left: 45%;
+      }
+      button {
+        margin: 10px;
+        font-size: 16px;
+        padding: 10px 25px;
+      }
+      button:first-child {
+        margin-left: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="MovingContainer">
+      <img src="icon1.gif" alt="Left Image" id="lImg" />
+      <img src="icon2.gif" alt="Right Image" id="rImg" />
+      <img src="TOP.JPG" alt="Bottom Image" id="bImg" />
+    </div>
+
+    <div>
+      <button id="go">go</button>
+      <button id="reset">reset</button>
+    </div>
+    <script src="MovingPics.js"></script>
+  </body>
+</html>
