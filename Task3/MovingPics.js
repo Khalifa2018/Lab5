@@ -1,6 +1,6 @@
 const MovingContainer = document.getElementById("MovingContainer");
-const mainwidth = MovingContainer.clientWidth;
-const mainhight = MovingContainer.clientHeight;
+const mainWidth = MovingContainer.clientWidth;
+const mainHight = MovingContainer.clientHeight;
 
 var interval;
 
@@ -26,8 +26,8 @@ document.getElementById("go").addEventListener("click", function () {
     isRunning = true;
     this.textContent = "stop";
 
-    var left = parseInt(getComputedStyle(leftImage).left);
-    if (left >= mainwidth - leftImage.clientWidth && moveLeftImageRight) {
+    let left = parseInt(getComputedStyle(leftImage).left);
+    if (left >= mainWidth - leftImage.clientWidth && moveLeftImageRight) {
       moveLeftImageRight = false;
     } else if (!moveLeftImageRight && left === 0) {
       moveLeftImageRight = true;
@@ -38,9 +38,9 @@ document.getElementById("go").addEventListener("click", function () {
       leftImage.style.left = `${left - 10}px`;
     }
 
-    var right = parseInt(getComputedStyle(rightImage).right);
+    let right = parseInt(getComputedStyle(rightImage).right);
     if (
-      right + 10 >= mainwidth - rightImage.clientWidth &&
+      right + 10 >= mainWidth - rightImage.clientWidth &&
       moveRightImageLeft
     ) {
       moveRightImageLeft = false;
@@ -53,9 +53,9 @@ document.getElementById("go").addEventListener("click", function () {
       rightImage.style.right = `${right - 10}px`;
     }
 
-    var bottom = parseInt(getComputedStyle(bottomImage).bottom);
+    let bottom = parseInt(getComputedStyle(bottomImage).bottom);
     if (
-      bottom + 10 >= mainhight - bottomImage.clientHeight &&
+      bottom + 10 >= mainHight - bottomImage.clientHeight &&
       moveBottomImageTop
     ) {
       moveBottomImageTop = false;
@@ -72,6 +72,9 @@ document.getElementById("go").addEventListener("click", function () {
 
 document.getElementById("reset").addEventListener("click", function () {
   clearInterval(interval);
+  document.getElementById("go").textContent = "go";
+  isRunning = false;
+
   leftImage.removeAttribute("style");
   rightImage.removeAttribute("style");
   bottomImage.removeAttribute("style");

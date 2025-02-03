@@ -15,13 +15,13 @@ document.getElementsByTagName("img")[0].addEventListener("click", function () {
     this.style.left = "10px";
 
 
-    var navigationContainer = document.getElementById("navigation");
+    let navigationContainer = document.getElementById("navigation");
     navigationContainer.style.display="flex";
     navigationContainer.style.justifyContent="center";
     navigationContainer.style.alignItems="center";
     navigationContainer.style.height="100vh";
 
-    var navigation = document.getElementById("nav");
+    let navigation = document.getElementById("nav");
     navigation.style.listStyleType="circle"
 
     document.body.appendChild(cloneImage);
